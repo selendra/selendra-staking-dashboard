@@ -32,7 +32,7 @@ export const ValidatorListInner = (props: any) => {
   const { isReady, network } = useApi();
   const { activeAccount } = useConnect();
   const { metrics } = useNetworkMetrics();
-  const { fetchValidatorMetaBatch } = useValidators();
+  const { fetchValidatorMetaBatch, meta } = useValidators();
   const provider = useList();
   const modal = useModal();
   const { isSyncing } = useUi();
@@ -70,6 +70,8 @@ export const ValidatorListInner = (props: any) => {
     format,
     selectable,
     bondType,
+    validatorAction,
+    validatorOnSelectAction,
   }: any = props;
 
   const actions = props.actions ?? [];
@@ -116,11 +118,14 @@ export const ValidatorListInner = (props: any) => {
 
   // pagination
   const totalPages = Math.ceil(validators.length / ListItemsPerPage);
-  const pageEnd = page * ListItemsPerPage - 1;
-  const pageStart = pageEnd - (ListItemsPerPage - 1);
+  const pageStart = (page - 1) * ListItemsPerPage;
+  const pageEnd = pageStart + ListItemsPerPage - 1;
 
   // render batch
-  const batchEnd = renderIteration * ListItemsPerBatch - 1;
+  const batchEnd = Math.min(
+    renderIteration * ListItemsPerBatch,
+    ListItemsPerPage
+  );
 
   // reset list when validator list changes
   useEffect(() => {
@@ -190,7 +195,14 @@ export const ValidatorListInner = (props: any) => {
     if (allowFilters && fetched) {
       handleValidatorsFilterUpdate();
     }
-  }, [order, isSyncing, includes?.length, excludes?.length]);
+  }, [
+    order,
+    isSyncing,
+    includes?.length,
+    excludes?.length,
+    meta[batchKey]?.supers,
+    meta[batchKey]?.identities,
+  ]);
 
   // handle modal resize on list format change
   useEffect(() => {
@@ -365,6 +377,8 @@ export const ValidatorListInner = (props: any) => {
                       showMenu={showMenu}
                       bondType={bondType}
                       inModal={inModal}
+                      validatorAction={validatorAction}
+                      validatorOnSelectAction={validatorOnSelectAction}
                     />
                   </motion.div>
                 );

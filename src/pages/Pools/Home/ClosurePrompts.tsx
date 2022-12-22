@@ -43,11 +43,11 @@ export const ClosurePrompts = () => {
     memberCounter === '1';
 
   // depositor needs to unbond funds
-  const depositorCanUnbond = active.toNumber() > 0 && !targets.length;
+  const depositorCanUnbond = !active.isZero() && !targets.length;
 
   // depositor can withdraw & close pool
   const depositorCanWithdraw =
-    active.toNumber() === 0 && totalUnlockChuncks === 0 && !targets.length;
+    active.isZero() && totalUnlockChuncks === 0 && !targets.length;
 
   return (
     <>

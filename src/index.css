@@ -106,7 +106,8 @@ button {
 }
 
 /* Aleph custom styles */
-.btn-layout, button {
+.btn-layout,
+button {
   font-family: 'Gilroy', sans-serif;
   font-weight: 600;
   letter-spacing: 0.04rem;
@@ -146,4 +147,8 @@ button {
 .theme-aleph-zero .connect > span,
 .theme-aleph-zero-testnet .connect > span {
   color: #111b24;
+}
+
+button.btn-submit {
+  color: inherit;
 }
