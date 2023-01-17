@@ -12,12 +12,17 @@ export const Notifications = () => {
     <Wrapper>
       <AnimatePresence initial={false}>
         {notifications.length > 0 &&
-          notifications.map((_n: any, i: number) => {
+          notifications.map((_n: any) => {
             const { item } = _n;
 
             return (
               <motion.li
-                key={`notification_${i}`}
+                key={`notification_${item.index}`}
+                className={
+                  item.title === 'Failed'
+                    ? 'notification--error'
+                    : 'notification--success'
+                }
                 layout
                 initial={{ opacity: 0, y: 50, scale: 0.3 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -25,7 +30,7 @@ export const Notifications = () => {
                   opacity: 0,
                   scale: 0.5,
                   y: 50,
-                  transition: { duration: 0.2 },
+                  transition: { duration: 0.4 },
                 }}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

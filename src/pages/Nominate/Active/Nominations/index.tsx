@@ -53,36 +53,6 @@ export const Nominations = ({
 
   const nominating = nominated?.length ?? false;
 
-  // callback function to stop nominating selected validators
-  const cbStopNominatingSelected = (provider: any) => {
-    const { selected } = provider;
-    const _nominations = [...nominations].filter((n) => {
-      return !selected.map((_s: any) => _s.address).includes(n);
-    });
-    openModalWith(
-      'ChangeNominations',
-      {
-        nominations: _nominations,
-        provider,
-        bondType,
-      },
-      'small'
-    );
-  };
-
-  // callback function for adding nominations
-  const cbAddNominations = ({ setSelectActive }: any) => {
-    setSelectActive(false);
-    openModalWith(
-      'NominateFromFavorites',
-      {
-        nominations,
-        bondType,
-      },
-      'xl'
-    );
-  };
-
   // determine whether buttons are disabled
   const poolDestroying =
     isPool &&
@@ -150,27 +120,7 @@ export const Nominations = ({
                 batchKey={batchKey}
                 title={t('nominate.your_nominations')}
                 format="nomination"
-                selectable={
-                  !isReadOnlyAccount(activeAccount) &&
-                  (!isPool || isPoolNominator() || isPoolOwner())
-                }
-                actions={
-                  isReadOnlyAccount(activeAccount)
-                    ? []
-                    : [
-                        {
-                          title: t('nominate.stop_nominating_selected'),
-                          onClick: cbStopNominatingSelected,
-                          onSelected: true,
-                        },
-                        {
-                          disabled: !favoritesList.length,
-                          title: t('nominate.add_from_favorites'),
-                          onClick: cbAddNominations,
-                          onSelected: false,
-                        },
-                      ]
-                }
+                selectable={false}
                 refetchOnListUpdate
                 allowMoreCols
                 disableThrottle
