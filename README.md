@@ -1,4 +1,4 @@
-# Aleph Zero Staking Dashboard
+# Aleph Zero Dashboard
 
 ## Setup for development
 ```create .env file with this content: REACT_APP_DISABLE_FIAT=1
@@ -7,7 +7,7 @@ npm run start
 ```
 
 ## Environment Variables
-Optionally apply the following envrionment variables in an environment file such as `.env` or with `yarn build` to customise the build of staking dashboard:
+Optionally apply the following envrionment variables in an environment file such as `.env` or with `yarn build` to customise the build of dashboard:
 
 ```
 # disable all mentioning of fiat values and token prices
