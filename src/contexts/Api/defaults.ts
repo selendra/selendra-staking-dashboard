@@ -9,6 +9,34 @@ import {
   APIContextInterface,
   ConnectionStatus,
 } from 'contexts/Api/types';
+import { NetworkName } from 'types';
+
+/**
+ * Checking values of "NETWORKS" instead of "NetworkName", because they're not
+ * compatible between runtime (the former) and compile time (the latter), the former
+ * having less fields defined and being the only safe one to use. This is obviously
+ * a wrong types problem, but fixing these types requires a bigger refactor.
+ */
+const isValidConfiguredNetworkName = (value: unknown): value is NetworkName =>
+  Object.keys(NETWORKS).includes(value as string);
+
+const defaultNetworkName =
+  process.env.NODE_ENV === 'production' &&
+  isValidConfiguredNetworkName(NetworkName.AlephZero)
+    ? NetworkName.AlephZero
+    : NetworkName.AlephZeroTestnet;
+
+const cachedNetworkName = localStorage.getItem('network');
+
+export const initialNetworkName = isValidConfiguredNetworkName(
+  cachedNetworkName
+)
+  ? cachedNetworkName
+  : defaultNetworkName;
+
+if (cachedNetworkName !== initialNetworkName) {
+  localStorage.setItem('network', initialNetworkName);
+}
 
 export const consts: APIConstants = {
   bondDuration: 0,
@@ -24,10 +52,6 @@ export const consts: APIConstants = {
 };
 
 export const defaultApiContext: APIContextInterface = {
-  // eslint-disable-next-line
-  connect: async () => {
-    await new Promise((resolve) => resolve(null));
-  },
   fetchDotPrice: () => {},
   // eslint-disable-next-line
   switchNetwork: async (_network, _isLightClient) => {
@@ -38,9 +62,5 @@ export const defaultApiContext: APIContextInterface = {
   isLightClient: false,
   isReady: false,
   status: ConnectionStatus.Disconnected,
-  network:
-    process.env.NODE_ENV === 'production' &&
-    process.env.REACT_APP_DISABLE_MAINNET !== '1'
-      ? NETWORKS.alephzero
-      : NETWORKS.alephzerotestnet,
+  network: NETWORKS[initialNetworkName],
 };
