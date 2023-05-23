@@ -17,7 +17,7 @@ const calcValidatorPayout = (eraData: EraData, validatorId: string) => {
 
   /**
    * The following is a formula for rewards calculation
-   * (https://docs.alephzero.org/aleph-zero/validate/elections-and-rewards-math)
+   * (https://docs.selendra.org/selendra/validate/elections-and-rewards-math)
    * transformed so that there's a minimal number of divisions in order to
    * limit floating point error.
    */
@@ -34,7 +34,7 @@ const calcValidatorPayout = (eraData: EraData, validatorId: string) => {
   const denominator = totalAwardedRewardPoints
     .mul(totalStake)
     .mul(TEN_POW_DECIMALS);
-  return azeroToTazero(
+  return selendraToTselendra(
     parseInt(numerator.toString(), 10) / parseInt(denominator.toString(), 10)
   );
 };
@@ -68,7 +68,7 @@ const calcNominatorPayout = (eraData: EraData, nominatorId: string) => {
       // Dividing by 10^DECIMALS to compensate for the commission multiplication (10^DECIMALS * 10^DECIMALS)
       .mul(TEN_POW_DECIMALS);
 
-    const rewardPerValidator = azeroToTazero(
+    const rewardPerValidator = selendraToTselendra(
       parseInt(numerator.toString(), 10) / parseInt(denominator.toString(), 10)
     );
 
@@ -76,4 +76,4 @@ const calcNominatorPayout = (eraData: EraData, nominatorId: string) => {
   }, 0);
 };
 
-const azeroToTazero = (value: number) => value / 10 ** DECIMALS;
+const selendraToTselendra = (value: number) => value / 10 ** DECIMALS;

@@ -3,9 +3,9 @@
 
 import { BN, BN_MILLION } from '@polkadot/util';
 import { DefaultParams } from 'consts';
-import { ReactComponent as AzeroIconSVG } from 'img/a0_icon.svg';
-import { ReactComponent as AzeroInlineSVG } from 'img/a0_inline.svg';
-import { ReactComponent as AzeroLogoSVG } from 'img/a0_logo.svg';
+import { ReactComponent as SelendraIconSVG } from 'img/sel_icon.svg';
+import { ReactComponent as SelendraInlineSVG } from 'img/sel_inline.svg';
+import { ReactComponent as SelendraLogoSVG } from 'img/sel_logo.svg';
 import { Networks } from 'types';
 
 /*
@@ -14,10 +14,10 @@ import { Networks } from 'types';
 export const NETWORKS: Networks = {};
 
 if (process.env.REACT_APP_DISABLE_MAINNET !== '1') {
-  NETWORKS.alephzero = {
-    name: 'Aleph Zero',
+  NETWORKS.selendra = {
+    name: 'Selendra Mainnet',
     endpoints: {
-      rpc: 'wss://ws.azero.dev',
+      rpc: 'wss://rpc.selendra.org',
       lightClient: null,
     },
     colors: {
@@ -38,22 +38,22 @@ if (process.env.REACT_APP_DISABLE_MAINNET !== '1') {
         dark: 'rgba(0, 204, 171, .5)',
       },
     },
-    unit: 'AZERO',
-    units: 12,
-    ss58: 42,
+    unit: 'SEL',
+    units: 18,
+    ss58: 204,
     brand: {
-      icon: AzeroIconSVG,
+      icon: SelendraIconSVG,
       logo: {
-        svg: AzeroLogoSVG,
+        svg: SelendraLogoSVG,
         width: '8.5rem',
       },
       inline: {
-        svg: AzeroInlineSVG,
+        svg: SelendraInlineSVG,
         size: '1.2rem',
       },
     },
     api: {
-      unit: 'AZERO',
+      unit: 'SEL',
       priceTicker: 'DOTUSDT', // this is for compatibility with binance endpoint, it's pinged for current token value, but we don't display that value
     },
     params: {
@@ -65,10 +65,10 @@ if (process.env.REACT_APP_DISABLE_MAINNET !== '1') {
 }
 
 if (process.env.REACT_APP_DISABLE_TESTNET !== '1') {
-  NETWORKS.alephzerotestnet = {
-    name: 'Aleph Zero Testnet',
+  NETWORKS.selendratestnet = {
+    name: 'Selendra Testnet',
     endpoints: {
-      rpc: 'wss://ws.test.azero.dev',
+      rpc: 'wss://rpc0-testnet.selendra.org',
       lightClient: null,
     },
     colors: {
@@ -89,22 +89,22 @@ if (process.env.REACT_APP_DISABLE_TESTNET !== '1') {
         dark: 'rgba(0, 204, 171, .5)',
       },
     },
-    unit: 'TZERO',
-    units: 12,
-    ss58: 42,
+    unit: 'TSEL',
+    units: 18,
+    ss58: 204,
     brand: {
-      icon: AzeroIconSVG,
+      icon: SelendraIconSVG,
       logo: {
-        svg: AzeroLogoSVG,
+        svg: SelendraLogoSVG,
         width: '8.5rem',
       },
       inline: {
-        svg: AzeroInlineSVG,
+        svg: SelendraInlineSVG,
         size: '1.2rem',
       },
     },
     api: {
-      unit: 'TZERO',
+      unit: 'TSEL',
       priceTicker: 'DOTUSDT', // this is for compatibility with binance endpoint, it's pinged for current token value, but we don't display that value
     },
     params: {
@@ -116,8 +116,8 @@ if (process.env.REACT_APP_DISABLE_TESTNET !== '1') {
 }
 
 if (process.env.REACT_APP_ENABLE_CUSTOM_NETWORK === '1') {
-  NETWORKS.azerocustom = {
-    name: 'Aleph Zero Custom',
+  NETWORKS.selendracustom = {
+    name: 'Selendra Custom',
     endpoints: {
       rpc: process.env.REACT_APP_CUSTOM_WS_ADDRESS ?? '',
       lightClient: null,
@@ -144,13 +144,13 @@ if (process.env.REACT_APP_ENABLE_CUSTOM_NETWORK === '1') {
     units: 12,
     ss58: 42,
     brand: {
-      icon: AzeroIconSVG,
+      icon: SelendraIconSVG,
       logo: {
-        svg: AzeroLogoSVG,
+        svg: SelendraLogoSVG,
         width: '8.5rem',
       },
       inline: {
-        svg: AzeroInlineSVG,
+        svg: SelendraInlineSVG,
         size: '1.2rem',
       },
     },
@@ -167,8 +167,8 @@ if (process.env.REACT_APP_ENABLE_CUSTOM_NETWORK === '1') {
 }
 
 if (process.env.NODE_ENV === 'development') {
-  NETWORKS.azerolocal = {
-    name: 'Aleph Zero Local',
+  NETWORKS.selendralocal = {
+    name: 'Selendra Local',
     endpoints: {
       rpc: 'ws://localhost:9944',
       lightClient: null,
@@ -191,22 +191,22 @@ if (process.env.NODE_ENV === 'development') {
         dark: 'rgba(0, 204, 171, .5)',
       },
     },
-    unit: 'LZERO',
+    unit: 'LSEL',
     units: 12,
     ss58: 42,
     brand: {
-      icon: AzeroIconSVG,
+      icon: SelendraIconSVG,
       logo: {
-        svg: AzeroLogoSVG,
+        svg: SelendraLogoSVG,
         width: '8.5rem',
       },
       inline: {
-        svg: AzeroInlineSVG,
+        svg: SelendraInlineSVG,
         size: '1.2rem',
       },
     },
     api: {
-      unit: 'LZERO',
+      unit: 'LSEL',
       priceTicker: 'DOTUSDT', // this is for compatibility with binance endpoint, it's pinged for current token value, but we don't display that value
     },
     params: {
@@ -215,10 +215,10 @@ if (process.env.NODE_ENV === 'development') {
       yearlyInflationInTokens: BN_MILLION.mul(new BN(30)).toNumber(),
     },
   };
-  NETWORKS.azerodevnet = {
-    name: 'Aleph Zero Devnet',
+  NETWORKS.selendradevnet = {
+    name: 'Selendra Devnet',
     endpoints: {
-      rpc: 'wss://ws.dev.azero.dev',
+      rpc: 'wss://rpc-dev.selendra.org',
       lightClient: null,
     },
     colors: {
@@ -239,22 +239,22 @@ if (process.env.NODE_ENV === 'development') {
         dark: 'rgba(0, 204, 171, .5)',
       },
     },
-    unit: 'DZERO',
-    units: 12,
-    ss58: 42,
+    unit: 'DSEL',
+    units: 18,
+    ss58: 204,
     brand: {
-      icon: AzeroIconSVG,
+      icon: SelendraIconSVG,
       logo: {
-        svg: AzeroLogoSVG,
+        svg: SelendraLogoSVG,
         width: '8.5rem',
       },
       inline: {
-        svg: AzeroInlineSVG,
+        svg: SelendraInlineSVG,
         size: '1.2rem',
       },
     },
     api: {
-      unit: 'DZERO',
+      unit: 'DSEL',
       priceTicker: 'DOTUSDT', // this is for compatibility with binance endpoint, it's pinged for current token value, but we don't display that value
     },
     params: {

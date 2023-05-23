@@ -105,7 +105,7 @@ button {
   align-items: flex-end;
 }
 
-/* Aleph custom styles */
+/* Selendra custom styles */
 .btn-layout,
 button {
   font-family: 'Gilroy', sans-serif;
@@ -113,8 +113,8 @@ button {
   letter-spacing: 0.04rem;
 }
 
-.theme-aleph-zero,
-.theme-aleph-zero-testnet {
+.theme-selendra-zero,
+.theme-selendra-testnet {
   --color-primary-light: #00ccab;
   --color-primary-dark: #00ccab;
   --color-secondary-light: #00ccab;
@@ -126,28 +126,28 @@ button {
   --color-button-secondary: #1b2b38;
   --color-button-secondary-hover: #182733;
 }
-.theme-aleph-zero,
-.theme-aleph-zero-testnet.theme-light #logotype_brandmark {
+.theme-selendra,
+.theme-selendra-testnet.theme-light #logotype_brandmark {
   fill: #111b24;
 }
 
-.theme-aleph-zero.theme-dark #logotype_brandmark,
-.theme-aleph-zero-testnet.theme-dark #logotype_brandmark {
+.theme-selendra.theme-dark #logotype_brandmark,
+.theme-selendra-testnet.theme-dark #logotype_brandmark {
   fill: white;
 }
 
-.theme-aleph-zero .btn-primary,
-.theme-aleph-zero-testnet .btn-primary {
+.theme-selendra .btn-primary,
+.theme-selendra-testnet .btn-primary {
   color: #111b24;
 }
 
-.theme-aleph-zero .connect > svg path,
-.theme-aleph-zero-testnet .connect > svg path {
+.theme-selendra .connect > svg path,
+.theme-selendra-testnet .connect > svg path {
   fill: #111b24 !important;
 }
 
-.theme-aleph-zero .connect > span,
-.theme-aleph-zero-testnet .connect > span {
+.theme-selendra .connect > span,
+.theme-selendra-testnet .connect > span {
   color: #111b24;
 }
 

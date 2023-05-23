@@ -20,13 +20,13 @@ export const HELP_CONFIG: HelpItems = [
     external: [
       [
         'dashboard_basics',
-        'https://docs.alephzero.org/aleph-zero/dashboard/dashboard-basics',
-        'docs.alephzero.org',
+        'https://docs.selendra.org/selendra/dashboard/dashboard-basics',
+        'docs.selendra.org',
       ],
       [
         'how_to_start',
-        'https://docs.alephzero.org/aleph-zero/stake/how-to-start-staking-with-the-aleph-zero-dashboard',
-        'docs.alephzero.org',
+        'https://docs.selendra.org/selendra/stake/how-to-start-staking-with-the-selendra-staking-dashboard',
+        'docs.selendra.org',
       ],
     ],
   },

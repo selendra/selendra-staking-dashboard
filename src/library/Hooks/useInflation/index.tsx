@@ -23,8 +23,8 @@ export const useInflation = () => {
     yearlyInflationInTokens,
   } = params;
 
-  /* For Aleph Zero inflation is calculated based on yearlyInflationInTokens and totalIssuanceInTokens
-   * We multiply stakedReturn by 0.9, as in case of Aleph Zero chain 10% of return goes to treasury
+  /* For Selendra is calculated based on yearlyInflationInTokens and totalIssuanceInTokens
+   * We multiply stakedReturn by 0.9, as in case of Selendra chain 10% of return goes to treasury
    */
   const calculateInflation = (totalStaked: BN, numAuctions: BN) => {
     const stakedFraction =

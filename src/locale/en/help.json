@@ -12,7 +12,7 @@
       "dashboard_tips": [
         "Dashboard Tips",
         [
-          "Dashboard will present you tips to help you along each step of staking on Aleph Zero.",
+          "Dashboard will present you tips to help you along each step of staking on Selendra.",
           "Tips can be turned off or re-enabled from dashboard settings, that can be accessed via the cog icon in the bottom left corner of the side menu."
         ]
       ],
@@ -220,14 +220,14 @@
         "Era",
         [
           "At the end of each era, validators are rewarded {NETWORK_UNIT} based on how many era points they accumulated in that era. This {NETWORK_UNIT} reward is then distributed amongst the nominators of the validator via a payout.",
-          "1 era is currently around 24 hours in Aleph Zero."
+          "1 era is currently around 24 hours in Selendra."
         ]
       ],
       "epoch": [
         "Epoch",
         [
           "An epoch is another name for a session in {NETWORK_NAME}. A different set of validators is selected to validate blocks at the beginning of every epoch.",
-          "1 epoch is currently 15 minutes on Aleph Zero."
+          "1 epoch is currently 15 minutes on Selendra."
         ]
       ],
       "era_points": [
@@ -308,8 +308,8 @@
       "create_pools": "Creating Nomination Pools",
       "claim_rewards": "Claiming Nomination Pool Rewards",
       "choose_validators": "How do I Know Which Validators to Choose?",
-      "how_to_start": "How to Start Staking with the Aleph Zero Dashboard",
-      "dashboard_basics": "General guide to using Aleph Zero Dashboard"
+      "how_to_start": "How to Start Staking with the Selendra Staking Dashboard",
+      "dashboard_basics": "General guide to using Selendra Staking Dashboard"
     }
   }
 }

@@ -32,7 +32,7 @@ const Context = React.createContext<ContextType>({} as ContextType);
 /**
  * Calculates payouts (aka rewards) based on stake data fetched from
  * the chain. The data is aggressively cached, as it's historical and
- * immutable. The returned values are in TAZERO (AZERO / 10^12).
+ * immutable. The returned values are in TSEL (SEL / 10^12).
  *
  * @param lastNEras Fetch last "lastNEras" eras, starting from the first
  * finished one (the one behind the active one)

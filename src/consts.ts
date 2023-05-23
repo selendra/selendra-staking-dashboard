@@ -8,9 +8,9 @@ import { stringToU8a } from '@polkadot/util';
  */
 export const AppVersion = '1.0.1';
 export const UriPrefix = '/';
-export const TitleDefault = 'Aleph Zero Dashboard';
-export const DappName = 'Aleph Zero Dashboard';
-export const PolkadotUrl = 'https://alephzero.org/staking/';
+export const TitleDefault = 'Selendra Staking Dashboard';
+export const DappName = 'Selendra Staking Dashboard';
+export const PolkadotUrl = 'https://selendra.org/staking/';
 
 /*
  * Data Structure Helpers

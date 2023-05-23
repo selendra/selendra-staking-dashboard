@@ -22,9 +22,9 @@ const isValidConfiguredNetworkName = (value: unknown): value is NetworkName =>
 
 const defaultNetworkName =
   process.env.NODE_ENV === 'production' &&
-  isValidConfiguredNetworkName(NetworkName.AlephZero)
-    ? NetworkName.AlephZero
-    : NetworkName.AlephZeroTestnet;
+  isValidConfiguredNetworkName(NetworkName.Selendra)
+    ? NetworkName.Selendra
+    : NetworkName.SelendraTestnet;
 
 const cachedNetworkName = localStorage.getItem('network');
 

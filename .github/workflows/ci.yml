@@ -1,4 +1,4 @@
-name: Aleph Zero Dashboard CI
+name: Selendra Staking Dashboard CI
 
 on:
   push:

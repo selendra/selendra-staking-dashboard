@@ -16,12 +16,12 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: GIT | Checkout aleph-apps repo
+    - name: GIT | Checkout selendra-apps repo
       uses: actions/checkout@v3
       with:
-        repository: Cardinal-Cryptography/aleph-apps
+        repository: Selendra/selendra-apps
         token: ${{ inputs.github_token }}
-        path: "aleph-apps"
+        path: "selendra-apps"
         ref: ${{ inputs.environment }}
 
     - name: KUSTOMIZE | Init kustomize
@@ -32,19 +32,19 @@ runs:
     - name: KUSTOMIZE | Update docker image tag
       shell: bash
       env:
-        DEPLOY_IMAGE: public.ecr.aws/p6e8q1z1/aleph-zero-dashboard:${{ inputs.image_tag }}-${{ inputs.environment }}
+        DEPLOY_IMAGE: public.ecr.aws/p6e8q1z1/selendra-staking-dashboard:${{ inputs.image_tag }}-${{ inputs.environment }}
       run: |
-        cd aleph-apps/aleph-zero-dashboard/overlays/${{ inputs.environment }}/eu-central-1
-        kustomize edit set image "aleph-zero-dashboard-image-placeholder=${{ env.DEPLOY_IMAGE }}"
+        cd selendra-apps/selendra-staking-dashboard/overlays/${{ inputs.environment }}/eu-central-1
+        kustomize edit set image "selendra-staking-dashboard-image-placeholder=${{ env.DEPLOY_IMAGE }}"
     
-    - name: GIT | Commit changes to aleph-apps repository
+    - name: GIT | Commit changes to selendra-apps repository
       uses: EndBug/add-and-commit@v5.1.0
       env:
         GITHUB_TOKEN: ${{ inputs.github_token }}
       with:
-        author_name: AlephZero Automation
-        author_email: alephzero@10clouds.com
-        message: 'Updating aleph-zero-dashboard ${{ inputs.environment }} docker image tag: ${{ inputs.image_tag }}'
+        author_name: Selendra Automation
+        author_email: selendra@selendra.com
+        message: 'Updating selendra-staking-dashboard ${{ inputs.environment }} docker image tag: ${{ inputs.image_tag }}'
         add: '*.yaml'
-        cwd: 'aleph-apps'
+        cwd: 'selendra-apps'
         branch: ${{ inputs.environment }}

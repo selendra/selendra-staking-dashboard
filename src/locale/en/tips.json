@@ -93,7 +93,7 @@
       "Measuring Validator Performance",
       "The performance of the validator depends on its uptime.",
       [
-        "The reward systems on Aleph Zero is simple -- each validator is earning rewards proportional to its stake.",
+        "The reward systems on Selendra is simple -- each validator is earning rewards proportional to its stake.",
         "If a validator's uptime is lower than 100%, its reward is slightly reduced though."
       ]
     ]
