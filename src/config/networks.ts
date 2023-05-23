@@ -44,11 +44,11 @@ if (process.env.REACT_APP_DISABLE_MAINNET !== '1') {
     brand: {
       icon: SelendraIconSVG,
       logo: {
-        svg: SelendraLogoSVG,
+        svg: SelendraIconSVG,
         width: '8.5rem',
       },
       inline: {
-        svg: SelendraInlineSVG,
+        svg: SelendraIconSVG,
         size: '1.2rem',
       },
     },
@@ -95,11 +95,11 @@ if (process.env.REACT_APP_DISABLE_TESTNET !== '1') {
     brand: {
       icon: SelendraIconSVG,
       logo: {
-        svg: SelendraLogoSVG,
+        svg: SelendraIconSVG,
         width: '8.5rem',
       },
       inline: {
-        svg: SelendraInlineSVG,
+        svg: SelendraIconSVG,
         size: '1.2rem',
       },
     },
@@ -140,22 +140,22 @@ if (process.env.REACT_APP_ENABLE_CUSTOM_NETWORK === '1') {
         dark: 'rgba(0, 204, 171, .5)',
       },
     },
-    unit: 'CZERO',
+    unit: 'CSEL',
     units: 12,
     ss58: 42,
     brand: {
       icon: SelendraIconSVG,
       logo: {
-        svg: SelendraLogoSVG,
+        svg: SelendraIconSVG,
         width: '8.5rem',
       },
       inline: {
-        svg: SelendraInlineSVG,
+        svg: SelendraIconSVG,
         size: '1.2rem',
       },
     },
     api: {
-      unit: 'CZERO',
+      unit: 'CSEL',
       priceTicker: 'DOTUSDT', // this is for compatibility with binance endpoint, it's pinged for current token value, but we don't display that value
     },
     params: {
@@ -197,11 +197,11 @@ if (process.env.NODE_ENV === 'development') {
     brand: {
       icon: SelendraIconSVG,
       logo: {
-        svg: SelendraLogoSVG,
+        svg: SelendraIconSVG,
         width: '8.5rem',
       },
       inline: {
-        svg: SelendraInlineSVG,
+        svg: SelendraIconSVG,
         size: '1.2rem',
       },
     },
@@ -245,11 +245,11 @@ if (process.env.NODE_ENV === 'development') {
     brand: {
       icon: SelendraIconSVG,
       logo: {
-        svg: SelendraLogoSVG,
+        svg: SelendraIconSVG,
         width: '8.5rem',
       },
       inline: {
-        svg: SelendraInlineSVG,
+        svg: SelendraIconSVG,
         size: '1.2rem',
       },
     },
