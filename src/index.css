@@ -115,14 +115,14 @@ button {
 
 .theme-selendra-zero,
 .theme-selendra-testnet {
-  --color-primary-light: #00ccab;
-  --color-primary-dark: #00ccab;
-  --color-secondary-light: #00ccab;
-  --color-secondary-dark: #00ccab;
+  --color-primary-light: #1d78f0;
+  --color-primary-dark: #1d78f0;
+  --color-secondary-light: #1d78f0;
+  --color-secondary-dark: #1d78f0;
   --color-transparent-light: rgb(0, 204, 171, 0.05);
   --color-transparent-dark: rgb(0, 204, 171, 0.05);
-  --color-stroke-light: #00ccab;
-  --color-stroke-dark: #00ccab;
+  --color-stroke-light: #1d78f0;
+  --color-stroke-dark: #1d78f0;
   --color-button-secondary: #1b2b38;
   --color-button-secondary-hover: #182733;
 }

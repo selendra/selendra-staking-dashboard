@@ -17,7 +17,7 @@ if (process.env.REACT_APP_DISABLE_MAINNET !== '1') {
   NETWORKS.selendra = {
     name: 'Selendra Mainnet',
     endpoints: {
-      rpc: 'wss://rpc.selendra.org',
+      rpc: 'wss://rpc0.selendra.org',
       lightClient: null,
     },
     colors: {
