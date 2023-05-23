@@ -4,8 +4,8 @@
 import { BN, BN_MILLION } from '@polkadot/util';
 import { DefaultParams } from 'consts';
 import { ReactComponent as SelendraIconSVG } from 'img/sel_icon.svg';
-import { ReactComponent as SelendraInlineSVG } from 'img/sel_inline.svg';
-import { ReactComponent as SelendraLogoSVG } from 'img/sel_logo.svg';
+// import { ReactComponent as SelendraInlineSVG } from 'img/sel_inline.svg';
+// import { ReactComponent as SelendraLogoSVG } from 'img/sel_logo.svg';
 import { Networks } from 'types';
 
 /*
