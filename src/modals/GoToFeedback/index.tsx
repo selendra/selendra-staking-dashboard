@@ -20,7 +20,7 @@ export const GoToFeedback = () => {
         >
           <NotesWrapper style={{ paddingTop: 0 }}>
             <p>
-              Best way to contact us is to join our Discord. Bug reports,
+              Best way to contact us is to join our Telegram. Bug reports,
               feature requests and improvements are all welcome.
             </p>
           </NotesWrapper>
