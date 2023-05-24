@@ -26,7 +26,7 @@ export const GoToFeedback = () => {
           </NotesWrapper>
           <h2 style={{ marginTop: 0 }}>
             <a
-              href="https://discord.com/invite/selendra"
+              href="https://t.me/selendrachain"
               target="_blank"
               rel="noreferrer"
             >
