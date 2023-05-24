@@ -30,7 +30,7 @@ export const GoToFeedback = () => {
               target="_blank"
               rel="noreferrer"
             >
-              Open our Discord &nbsp;
+              Open our Telegram &nbsp;
               <FontAwesomeIcon icon={faExternalLinkAlt} transform="shrink-3" />
             </a>
           </h2>
